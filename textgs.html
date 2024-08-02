@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5px;
+    color: red;
+}
+</style>
+</head>
+<body>
+<p id="demo">TEXT GROWING</p>
+<script>
+var fs = 5;
+var ids = document.getElementById("demo");
+
+function inTimer() {
+    ids.innerHTML = 'TEXT GROWING';
+    ids.style.fontSize = fs + "px";
+    ids.style.color = "red";
+    fs += 5;
+    if (fs >= 50) {
+        clearInterval(var1);
+        var2 = setInterval(deTimer, 1000);
+    }
+}
+
+function deTimer() {
+    fs -= 5;
+    ids.innerHTML = 'TEXT SHRINKING';
+    ids.style.fontSize = fs + "px";
+    ids.style.color = "blue";
+    if (fs === 5) {
+        clearInterval(var2);
+        var1 = setInterval(inTimer, 1000);
+    }
+}
+
+var var1 = setInterval(inTimer, 1000);
+</script>
+</body>
+</html>

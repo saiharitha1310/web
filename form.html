@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title> Details Form</title>
+<head></head>
+<body>
+
+	<center><h1>DETAILS FORM</h1></center>
+<center>
+<script>
+function validateform()
+{
+	var name=document.DetailsForm.firstname.value;
+	var name=document.DetailsForm.lastname.value;
+	var password=document.DetailsForm.password.value;
+	var address=document.DetailsForm.address.value;
+	var dob=document.DetailsForm.dob.value;
+	var phone=document.DetailsForm.phone.value;
+	var country=document.DetailsForm.country.value;
+	var city=document.DetailsForm.city.value;
+	var branch=document.DetailsForm.branch.value;
+	if (name==null || name==""){
+		alert("name cant be blank");
+		return false
+	}
+	else if(password.length<6){
+		alert("password should be atleast 6 characters");
+		return false;
+	}
+	else if(address==null || address==""){
+		alert("enter the address");
+		return false;
+	}
+	else if(dob==null || dob==""){
+		alert("please select dob");
+		return false;
+	}
+	else if(phone.length!=10){
+		alert("please enter valid number");
+		return false;
+	}
+	else if(country.value==null){
+		alert("please select a country");
+		return false;
+	}
+	else if(city==null || city==""){
+		alert("please enter city name");
+		return false;
+	}
+	else if(branch.value==null){
+		alert("please select a branch");
+		return false;
+	}
+}
+</script>
+<table> 
+	<form name="DetailsForm" method="post" onsubmit="return validateform()">
+		<tr><td><label>FirstName:</label></td><td> <input type="text" name="firstname"></td></tr>
+		<tr><td><label>LastName:</label> </td><td><input type="text" name="lastname"></td></tr>
+		<tr><td><label>Password:</label> </td><td><input type="password" name="password"></td></tr>
+		<tr><td><label>Address:</label></td><td><textarea rows="5" cols="21" name="address"></textarea></td></tr>
+		<tr><td><label>DateOfBirth:</label></td><td><input type="date" name="dob"></td></tr>
+		<tr><td><label>PhoneNO:</label></td><td><input type="text" name="phone"></td></tr>
+		<tr><td><label>Email:</label> </td><td><input type="email" name="email"></td></tr>
+		<tr><td><label>Country:</label> </td><td><select name="country">
+			<option></option>
+			<option>India</option>
+			<option>Canada</option>
+			<option>USA</option>
+			<option>England</option>
+			<option>UK</option>
+			<option>China</option>
+		</td></tr>	
+		<tr><td><label>City:</label> </td><td><input type="text" name="city"></td></tr>
+		<tr><td><label>Branch:</label> </td><td><select name="branch">
+			<option></option>
+			<option>BTech</option>
+			<option>MTech</option>
+			<option>MBA</option>
+			<option>MCA</option>
+		<tr><td><label>Gender:</label> </td><td>
+			<input type="radio">Male
+			<input type="radio">Female
+		</td></tr>
+		<tr><td><label>Language:</label> </td><td>
+			<input type="checkbox" >C
+			<input type="checkbox" >Java
+			<input type="checkbox" >Python
+			<input type="checkbox" >HTML
+		</td></tr>
+		<tr><td><label>Resume:</label> </td><td><input type="file" ></td></tr>
+		<tr><td><label></label> </td><td><input type="submit" > <input type="reset" ></td></tr>
+	</form>
+</table>
+</center>
+</body>
+</html>

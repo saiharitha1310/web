@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Blinking Text</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div id="blink-text">This text blinks.</div>
+<script>
+$(document).ready(function(){
+setInterval(function(){
+$("#blink-text").fadeToggle(200);
+},900);
+});
+</script>
+</body>
+</html>
